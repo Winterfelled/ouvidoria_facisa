@@ -1,8 +1,5 @@
 from methods_ouvidoria import *
 
-
-conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
-
 opcao = -1
 
 while opcao != 7:
