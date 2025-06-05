@@ -55,3 +55,46 @@ def adicionar_manifestacao(conexao):
     dados = [titulo,manifestacao,tipo_manifestacao, usuario]
     adicionar = insertNoBancoDados(conexao, consulta, dados)
     print(f"Sucesso! Manifestação adicionada com código {adicionar}")
+
+def listar_por_tipo(conexao):
+    while True:
+        try:
+            codigo = int(input(
+                "Indique o tipo da manifestação que você deseja consultar:\n"
+                "1 - Reclamação\n"
+                "2 - Elogio\n"
+                "3 - Sugestão\n"
+                "-1 - Sair\n"
+                "Opção: "
+            ))
+
+            if codigo == -1:
+                print("Saindo da consulta.")
+                return  # Encerra a função
+
+            if codigo not in [1, 2, 3]:
+                print("Opção inválida. Tente novamente.")
+                continue
+
+            if codigo == 1:
+                dados1 = "Reclamação"
+            elif codigo == 2:
+                dados1 = "Elogio"
+            else:
+                dados1 = "Sugestão"
+
+            consulta = "SELECT * FROM ouvidoria WHERE tipo_manifestacao = %s"
+            dados = [dados1]
+            lista = listarBancoDados(conexao, consulta, dados)
+
+            if not lista:
+                print("Nenhuma manifestação encontrada para esse tipo.")
+            else:
+                print("Resultados encontrados:")
+                for item in lista:
+                    print(item)
+
+            return  # Finaliza a função após exibir o resultado
+
+        except ValueError:
+            print("Por favor, digite um número inteiro válido.")
