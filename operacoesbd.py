@@ -2,7 +2,6 @@ import mysql.connector
 from mysql.connector.abstracts import MySQLConnectionAbstract
 from mysql.connector.pooling import PooledMySQLConnection
 
-
 # Inicializa a conexão com o banco de dados
 def criarConexao(endereco: object, usuario: object, senha: object,
                  bancodedados: object) -> None | PooledMySQLConnection | MySQLConnectionAbstract:
