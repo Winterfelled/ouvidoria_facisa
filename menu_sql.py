@@ -18,7 +18,7 @@ while opcao != 7:
         print("listar por codigo")
 
     elif opcao == 3:
-        print("criar nova manisfestacao")
+        adicionar_manifestacao(conexao)
 
     elif opcao == 4:
         print("Exibir quantidade de manifestações")
