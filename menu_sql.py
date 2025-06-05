@@ -1,4 +1,5 @@
-from operacoesbd import criarConexao
+from methods_ouvidoria import *
+
 
 conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
 
@@ -7,8 +8,8 @@ opcao = -1
 while opcao != 7:
 
     print("\n- Bem vindo ao sistema de ouvidoria da unifacisa -")
-    print("1) Listar manifestações | 2) Listar Manifestações por código | 3) Criar uma nova manisfestação")
-    print("4) Exibir quantidade de manifestações | 5) Pesquisar manifestação por código 6) Excluir uma manifestação por código")
+    print("1) Listar manifestações | 2) Listar Manifestações por tipo | 3) Criar uma nova manisfestação")
+    print("4) Exibir quantidade de manifestações | 5) Pesquisar manifestação por código | 6) Excluir uma manifestação por código")
     print("7) Sair do sistema")
 
     opcao = int(input("Digite a opção desejada: "))
@@ -26,10 +27,13 @@ while opcao != 7:
         print("Exibir quantidade de manifestações")
 
     elif opcao == 5:
-        print("Pesquisar manifestação por código")
+        pesquisar_codigo(conexao)
 
     elif opcao == 6:
-        print("Excluir por código")
+        excluir_manifestacao(conexao)
 
     elif opcao != 7:
         print("Opcão inválida.")
+
+encerrarConexao(conexao)
+print("Obrigado por utilizar o sistema de manifestações da FACISA.")
