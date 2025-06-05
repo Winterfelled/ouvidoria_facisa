@@ -1,6 +1,6 @@
 from operacoesbd import *
 
-conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="programa@11",bancodedados="ouvidoria_z")
+conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
 
 def pesquisar_codigo(conexao):
     codigo = int(input("\nDigite o código correspondente: "))
