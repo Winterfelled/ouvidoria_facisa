@@ -1,6 +1,6 @@
 from operacoesbd import *
 
-conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
+conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="programa@11",bancodedados="ouvidoria_z")
 
 def pesquisar_codigo(conexao):
     codigo = int(input("\nDigite o código correspondente: "))
@@ -27,9 +27,18 @@ def excluir_manifestacao (conexao):
         print("Manifestação excluida com sucesso.")
 
 def adicionar_manifestacao(conexao):
-    consulta = "insert into ouvidoria (titulo, manifestacao, tipo_manifestacao, usuario) values (%s, %s, %s, %s)"
-    titulo = input("Título da manifestação: ")
-    manifestacao = input("Digite sua manifestação: ")
+    while True:
+        consulta = "insert into ouvidoria (titulo, manifestacao, tipo_manifestacao, usuario) values (%s, %s, %s, %s)"
+        titulo = input("\nTítulo da manifestação: ")
+        manifestacao = input("Digite sua manifestação: ")
+        usuario = input("Nome do manifestante: ")
+
+        if len(consulta) == 0 or len(titulo) == 0 or len(manifestacao) == 0 or len(usuario) == 0:
+            print("Um dos valores inseridos é inválido, tente novamente.")
+
+        else:
+            break
+
     while True:
         tipo_manifestacao = int(input("Digite o tipo da manifestacao: (1 - reclamação | 2 - Elogio | 3 - Sugestão): "))
         if tipo_manifestacao == 1:
@@ -43,8 +52,6 @@ def adicionar_manifestacao(conexao):
             break
         else:
             print("Digite uma opção válida.")
-            continue
-    usuario = input("Nome do manifestante: ")
     dados = [titulo,manifestacao,tipo_manifestacao, usuario]
     adicionar = insertNoBancoDados(conexao, consulta, dados)
     print(f"Sucesso! Manifestação adicionada com código {adicionar}")
