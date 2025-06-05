@@ -1,7 +1,7 @@
 from operacoesbd import criarConexao
 
 
-conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria")
+conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
 
 opcao = -1
 
