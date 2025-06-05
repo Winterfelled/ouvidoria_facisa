@@ -1,4 +1,5 @@
 from operacoesbd import criarConexao
+https://code-with-me.global.jetbrains.com/J-Ovfpr8Ppme1ld_j_953g#p=PC&fp=E5E2872E5371F1EB0EE788CC92B766E65CF16F3071B022492B25776E396B67F9&newUi=true
 
 conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
 
