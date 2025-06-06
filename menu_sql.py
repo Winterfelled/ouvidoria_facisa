@@ -15,7 +15,7 @@ while opcao != 7:
         print("listar")
 
     elif opcao == 2:
-        print("listar por codigo")
+        listar_por_tipo(conexao)
 
     elif opcao == 3:
         adicionar_manifestacao(conexao)

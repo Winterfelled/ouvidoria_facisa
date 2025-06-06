@@ -1,6 +1,6 @@
 from operacoesbd import *
 
-conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="root",bancodedados="ouvidoria_z")
+conexao = criarConexao(endereco="127.0.0.1",usuario="root",senha="programa@11",bancodedados="ouvidoria_z")
 
 def pesquisar_codigo(conexao):
     codigo = int(input("\nDigite o código correspondente: "))
@@ -64,7 +64,7 @@ def listar_por_tipo(conexao):
                 "1 - Reclamação\n"
                 "2 - Elogio\n"
                 "3 - Sugestão\n"
-                "-1 - Sair\n"
+                "1 - Sair\n"
                 "Opção: "
             ))
 
@@ -92,7 +92,7 @@ def listar_por_tipo(conexao):
             else:
                 print("Resultados encontrados:")
                 for item in lista:
-                    print(item)
+                    print(f"\n{item[0]} - Titulo: {item[1]} \nManifestação: {item[2]} \n Tipo: {item[3]} \n Nome: {item[4]}")
 
             return  # Finaliza a função após exibir o resultado
 
