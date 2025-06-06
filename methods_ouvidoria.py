@@ -70,7 +70,7 @@ def listar_por_tipo(conexao):
 
             if codigo == -1:
                 print("Saindo da consulta.")
-                return  # Encerra a função
+                return  
 
             if codigo not in [1, 2, 3]:
                 print("Opção inválida. Tente novamente.")
