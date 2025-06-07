@@ -21,7 +21,7 @@ while opcao != 7:
         adicionar_manifestacao(conexao)
 
     elif opcao == 4:
-        quantidade_Filmes(conexao)
+        quantidade_Manifestacoes(conexao)
 
     elif opcao == 5:
         pesquisar_codigo(conexao)

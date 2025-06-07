@@ -100,11 +100,10 @@ def listar_por_tipo(conexao):
         except ValueError:
             print("Por favor, digite um número inteiro válido.")
 
-def quantidade_Filmes(conexao):
-
-    consulta = 'select count(*) from Filme'
-    quantidade_Filmes = listarBancoDados(conexao, consulta)
-    print("Atualmente Temos", quantidade_Filmes[0][0], "filme(s) listados!")
+def quantidade_Manifestacoes(conexao):
+    consulta = 'select count(*) from ouvidoria'
+    quantidade_Manifestacoes = listarBancoDados(conexao, consulta)
+    print("Atualmente Temos", quantidade_Manifestacoes[0][0], "manifestação(oes) listadas!")
 
 def listar(conexao):
     consulta = "select * from ouvidoria"
