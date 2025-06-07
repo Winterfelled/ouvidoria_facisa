@@ -96,5 +96,12 @@ def listar_por_tipo(conexao):
 
             return  # Finaliza a função após exibir o resultado
 
+
         except ValueError:
             print("Por favor, digite um número inteiro válido.")
+
+def quantidade_Filmes(conexao):
+
+    consulta = 'select count(*) from Filme'
+    quantidade_Filmes = listarBancoDados(conexao, consulta)
+    print("Atualmente Temos", quantidade_Filmes[0][0], "filme(s) listados!")
