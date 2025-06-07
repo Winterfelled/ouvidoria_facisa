@@ -105,3 +105,9 @@ def quantidade_Filmes(conexao):
     consulta = 'select count(*) from Filme'
     quantidade_Filmes = listarBancoDados(conexao, consulta)
     print("Atualmente Temos", quantidade_Filmes[0][0], "filme(s) listados!")
+
+def listar(conexao):
+    consulta = "select * from ouvidoria"
+    lista_de_manifestacao = listarBancoDados(conexao,consulta)
+    for item in lista_de_manifestacao:
+        print(item)
