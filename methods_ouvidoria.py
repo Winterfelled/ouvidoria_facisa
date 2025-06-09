@@ -112,4 +112,4 @@ def listar(conexao):
     consulta = "select * from ouvidoria"
     lista_de_manifestacao = listarBancoDados(conexao,consulta)
     for item in lista_de_manifestacao:
-        print(item)
+        print(f"\n{item[0]} - Titulo: {item[1]} \nManifestação: {item[2]} \n Tipo: {item[3]} \n Nome: {item[4]}")
