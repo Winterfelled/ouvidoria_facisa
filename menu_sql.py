@@ -33,4 +33,4 @@ while opcao != 7:
         print("Opcão inválida.")
 
 encerrarConexao(conexao)
-print("Obrigado por utilizar o sistema de manifestações da FACISA.")
+print("Obrigado por utilizar o sistema de manifestações.")
