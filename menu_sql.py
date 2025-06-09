@@ -12,7 +12,7 @@ while opcao != 7:
     opcao = int(input("Digite a opção desejada: "))
 
     if opcao == 1:
-        print("listar")
+        listar(conexao)
 
     elif opcao == 2:
         listar_por_tipo(conexao)
