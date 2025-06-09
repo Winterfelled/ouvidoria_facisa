@@ -103,7 +103,10 @@ def listar_por_tipo(conexao):
 def quantidade_Manifestacoes(conexao):
     consulta = 'select count(*) from ouvidoria'
     quantidade_Manifestacoes = listarBancoDados(conexao, consulta)
-    print("Atualmente Temos", quantidade_Manifestacoes[0][0], "manifestação(oes) listadas!")
+    if quantidade_Manifestacoes[0][0] == 0:
+        print ("Não há manifestações!")
+    else:
+        print("Atualmente Temos", quantidade_Manifestacoes[0][0], "manifestação(oes) listadas!")
 
 def listar(conexao):
     consulta = "select * from ouvidoria"
