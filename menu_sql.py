@@ -4,7 +4,7 @@ opcao = -1
 
 while opcao != 7:
 
-    print("\n- Bem vindo ao sistema de ouvidoria da unifacisa -")
+    print("\n- Bem vindo ao sistema de ouvidoria -")
     print("1) Listar manifestações | 2) Listar Manifestações por tipo | 3) Criar uma nova manisfestação")
     print("4) Exibir quantidade de manifestações | 5) Pesquisar manifestação por código | 6) Excluir uma manifestação por código")
     print("7) Sair do sistema")
