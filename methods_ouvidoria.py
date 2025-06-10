@@ -64,7 +64,7 @@ def listar_por_tipo(conexao):
                 "1 - Reclamação\n"
                 "2 - Elogio\n"
                 "3 - Sugestão\n"
-                "1 - Sair\n"
+                "-1 - Sair\n"
                 "Opção: "
             ))
 
@@ -72,11 +72,11 @@ def listar_por_tipo(conexao):
                 print("Saindo da consulta.")
                 return  
 
-            if codigo not in [1, 2, 3]:
+            elif codigo not in [1, 2, 3]:
                 print("Opção inválida. Tente novamente.")
                 continue
 
-            if codigo == 1:
+            elif codigo == 1:
                 dados1 = "Reclamação"
             elif codigo == 2:
                 dados1 = "Elogio"
