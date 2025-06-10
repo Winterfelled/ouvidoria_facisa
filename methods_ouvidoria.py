@@ -112,7 +112,7 @@ def listar(conexao):
     consulta = "select * from ouvidoria"
     lista_de_manifestacao = listarBancoDados(conexao,consulta)
     if lista_de_manifestacao == []:
-        print("\nManifestação com este código não está disponível")
+        print("\nNão existem manifestações registradas.")
     else:
         for item in lista_de_manifestacao:
             print(f"\n{item[0]} - Titulo: {item[1]} \nManifestação: {item[2]} \n Tipo: {item[3]} \n Nome: {item[4]}")
